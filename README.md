@@ -16,11 +16,14 @@ The core of this transformation is the function
 
 	BLResult blxPathPerspectiveTransform(BLPath* path, const mat3x3x M)
 where
+
 	M is a 3x3 matrix (mat3x3) that can be obtained by calling the 'quadtoquad()' function.
 
 Here is the quadtoquad() function:
-   enum pmapType quadtoquad(const quad Q1, const quad Q2, mat3x3 M)
+
+	enum pmapType quadtoquad(const quad Q1, const quad Q2, mat3x3 M)
 where
+
 	'quad' (quadrilater) is an array of 4 '2D Points' (i.e an array of 8 double)
 	'enum pmapType' is  { PMAP_AFFINE, PMAP_PERSPECTIVE, PMAP_BAD }.
 
