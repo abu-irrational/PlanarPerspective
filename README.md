@@ -33,7 +33,7 @@ so you can call the function 'is_convex(Q)'
 Please pay attention, after calling quadtoquad(), always check the returned pmapType;
 if it's equal to PMAP_BAD, then there's no transformation from Q1 to Q2 and M is invalid.
 
-Finally, once you get M, you can apply this transformation to a BlPath p
+Finally, once you get M, you can apply this transformation to a BLPath p
 
 	blxPathPerspectiveTransform(&p, M);
 
