@@ -14,7 +14,7 @@ which allows you to apply a perspective transformation to the geometry of a BLPa
 ---
 The core of this transformation is the function
 
-	BLResult blxPathPerspectiveTransform(BLPath* path, const mat3x3x M)
+	BLResult blxPathPerspectiveTransform(BLPath* path, const mat3x3 M)
 where
 
 	M is a 3x3 matrix (mat3x3) that can be obtained by calling the 'quadtoquad()' function.
@@ -34,7 +34,8 @@ Please pay attention, after calling quadtoquad(), always check the returned pmap
 if it's equal to PMAP_BAD, then there's no transformation from Q1 to Q2 and M is invalid.
 
 Finally, once you get M, you can apply this transformation to a BlPath p
-   blxPathPerspectiveTransform(&p, M)
+
+	blxPathPerspectiveTransform(&p, M);
 
 
 Full Example
@@ -61,6 +62,6 @@ Full Example
 
 	// apply the transformation
 	//  Hint:  maybe you should work on a copy
-	//    BLPath path2 = path1;
+	BLPath path2 = path1;
 	blxPathPerspectiveTransform(&path2, M)
 	// .. then you can can stroke path2 ...
