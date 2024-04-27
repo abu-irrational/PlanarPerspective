@@ -126,7 +126,7 @@ static
 enum pmapType pmap_quad_rect(const double u0, const double v0, const double u1, const double v1,
 	const quad Q,
 	mat3x3 QR) {
-	enum pmap ret;
+	enum pmapType ret;
 	double du, dv;
 	mat3x3 RQ;   // Rect to Quad transform
 
@@ -169,7 +169,7 @@ enum pmapType pmap_quad_rect(const double u0, const double v0, const double u1, 
  */
 static
 enum pmapType pmap_quad_quad(const quad A, const quad B, mat3x3 ST) {
-	enum pmap type1, type2;
+	enum pmapType type1, type2;
 	mat3x3 MS;
 	mat3x3 SM;
 	mat3x3 MT;
@@ -215,7 +215,7 @@ enum pmapType _quadtoquad(const quad A, const quad B, mat3x3 ST) {
 }
 
 enum pmapType quadtoquad(const quad A, const quad B, mat3x3 M) {
-	int res = _quadtoquad(A, B, M);
+	enum pmapType res = _quadtoquad(A, B, M);
 	 // Normalize the matrix
 	if ( res != PMAP_BAD ) {
 		double m22 = M[2][2];
